@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Ice Dude</title>
+
+  <!-- Chargement de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chargement de la police "Inter" (similaire à l'original) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    // Configuration de Tailwind pour utiliser la police Inter
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            // Définition de la couleur jaune "accent" du site
+            'custom-yellow': '#FACC15', // C'est un jaune vif de Tailwind (yellow-400)
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* CSS additionnel pour l'effet de soulignement jaune */
+    .title-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .title-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -8px; /* Ajustez la position */
+      left: 0;
+      width: 70%; /* Largeur du soulignement */
+      height: 5px; /* Épaisseur */
+      background-color: #FACC15; /* Couleur jaune */
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-white text-gray-900">
+
+<!-- ===== En-tête (Header) ===== -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#home" class="text-3xl font-extrabold text-gray-900">ice.</a>
+
+    <!-- Navigation (Desktop) -->
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#home" class="text-gray-700 hover:text-custom-yellow transition-colors font-medium">Home</a>
+      <a href="#about" class="text-gray-700 hover:text-custom-yellow transition-colors font-medium">About</a>
+      <a href="#services" class="text-gray-700 hover:text-custom-yellow transition-colors font-medium">Services</a>
+      <a href="#portfolio" class="text-gray-700 hover:text-custom-yellow transition-colors font-medium">Portfolio</a>
+      <a href="#contact" class="text-gray-700 hover:text-custom-yellow transition-colors font-medium">Contact</a>
+    </div>
+
+    <!-- Bouton "Let's Talk" (Desktop) -->
+    <a href="#contact" class="hidden md:inline-block bg-custom-yellow text-gray-900 font-bold py-3 px-6 rounded-lg shadow-md hover:bg-yellow-500 transition-all">
+      Let's Talk
+    </a>
+
+    <!-- Bouton Menu Mobile (Mobile) -->
+    <button id="menu-btn" class="md:hidden text-gray-900 z-50">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Menu Mobile (s'affiche au clic) -->
+  <div id="menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-8 text-2xl font-medium">
+    <a href="#home" class="menu-link text-gray-700 hover:text-custom-yellow transition-colors">Home</a>
+    <a href="#about" class="menu-link text-gray-700 hover:text-custom-yellow transition-colors">About</a>
+    <a href="#services" class="menu-link text-gray-700 hover:text-custom-yellow transition-colors">Services</a>
+    <a href="#portfolio" class="menu-link text-gray-700 hover:text-custom-yellow transition-colors">Portfolio</a>
+    <a href="#contact" class="menu-link text-gray-700 hover:text-custom-yellow transition-colors">Contact</a>
+    <a href="#contact" class="bg-custom-yellow text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md hover:bg-yellow-500 transition-all mt-4">
+      Let's Talk
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== Section Héros (#home) ===== -->
+  <section id="home" class="container mx-auto px-6 py-24 md:py-32">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <!-- Colonne de Texte -->
+      <div class="text-center md:text-left">
+        <p class="text-lg text-gray-600 font-medium">Hello, I'm</p>
+        <h1 class="text-6xl md:text-7xl font-extrabold text-gray-900 mt-2">
+          <span class="title-underline">Ice Dude</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mt-8">
+          Web Designer & Developer
+        </h2>
+        <p class="text-gray-600 mt-6 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+        </p>
+        <!-- Boutons d'action -->
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="#contact" class="bg-custom-yellow text-gray-900 font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-yellow-500 transition-all text-center">
+            Get In Touch
+          </a>
+          <a href="#portfolio" class="bg-gray-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-gray-800 transition-all text-center">
+            View My Work
+          </a>
+        </div>
+      </div>
+      <!-- Colonne Image -->
+      <div class="flex justify-center">
+        <img src="https://placehold.co/500x600/e2e8f0/4a4a4a?text=Portrait"
+             alt="Portrait de Ice Dude"
+             class="rounded-xl shadow-2xl object-cover w-full max-w-md">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section Services (#services) ===== -->
+  <section id="services" class="bg-gray-50 py-24">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-lg text-custom-yellow font-semibold uppercase">What I Do</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">My Services</h2>
+
+      <!-- Grille des services -->
+      <div class="mt-16 grid md:grid-cols-3 gap-8 text-left">
+        <!-- Carte Service 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-custom-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <h3 class="text-2xl font-bold text-gray-900 mt-6">Web Development</h3>
+          <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+          <a href="#" class="text-custom-yellow font-semibold mt-6 inline-block hover:underline">Read More &rarr;</a>
+        </div>
+
+        <!-- Carte Service 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-custom-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-1.719-.668-3.3-1.845-4.478A6.002 6.002 0 0012 1.5a6.002 6.002 0 00-3.308 1.049A5.98 5.98 0 007.5 6.087c0 1.72.668 3.301 1.845 4.478A6.002 6.002 0 0012 11.614a6.002 6.002 0 003.308-1.049A5.98 5.98 0 0014.25 6.087z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.53 10.035A9 9 0 0112 3.012a9 9 0 018.47 7.023" />
+          </svg>
+          <h3 class="text-2xl font-bold text-gray-900 mt-6">UI/UX Design</h3>
+          <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+          <a href="#" class="text-custom-yellow font-semibold mt-6 inline-block hover:underline">Read More &rarr;</a>
+        </div>
+
+        <!-- Carte Service 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-custom-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+          </svg>
+          <h3 class="text-2xl font-bold text-gray-900 mt-6">App Design</h3>
+          <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+          <a href="#" class="text-custom-yellow font-semibold mt-6 inline-block hover:underline">Read More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section À Propos (#about) ===== -->
+  <section id="about" class="bg-white py-24">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Colonne Image -->
+        <div class="flex justify-center">
+          <img src="https://placehold.co/500x600/e2e8f0/4a4a4a?text=About+Me"
+               alt="Ice Dude au travail"
+               class="rounded-xl shadow-2xl object-cover w-full max-w-md">
+        </div>
+
+        <!-- Colonne de Texte -->
+        <div>
+          <p class="text-lg text-custom-yellow font-semibold uppercase">About Me</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">Designing With Passion While Exploring The World</h2>
+          <p class="text-gray-600 mt-6 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <h3 class="text-2xl font-bold text-gray-900 mt-8">Why Choose Me?</h3>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-center text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>User Friendly and Responsive Design</span>
+            </li>
+            <li class="flex items-center text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Clean & Optimized Code</span>
+            </li>
+            <li class="flex items-center text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Fast Support and Maintenance</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section Portfolio (#portfolio) ===== -->
+  <section id="portfolio" class="bg-gray-50 py-24">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-lg text-custom-yellow font-semibold uppercase">Recent Works</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">My Portfolio</h2>
+
+      <!-- Grille du Portfolio -->
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Item 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img src="https://placehold.co/600x400/e0f2fe/0ea5e9?text=Project+1"
+               alt="Projet 1"
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Creative Agency Website</h3>
+            <p class="text-gray-600">UI/UX Design, Development</p>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img src="https://placehold.co/600x400/ecfdf5/10b981?text=Project+2"
+               alt="Projet 2"
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">E-commerce App</h3>
+            <p class="text-gray-600">App Design</p>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img src="https://placehold.co/600x400/fffbeb/d97706?text=Project+3"
+               alt="Projet 3"
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Restaurant Landing Page</h3>
+            <p class="text-gray-600">Web Development</p>
+          </div>
+        </div>
+        <!-- Item 4 (Optionnel) -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img src="https://placehold.co/600x400/fef2f2/ef4444?text=Project+4"
+               alt="Projet 4"
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">SaaS Dashboard</h3>
+            <p class="text-gray-600">UI/UX Design</s-p>
+          </div>
+        </div>
+        <!-- Item 5 (Optionnel) -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img src="https://placehold.co/600x400/f5f3ff/8b5cf6?text=Project+5"
+               alt="Projet 5"
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Personal Blog</h3>
+            <p class="text-gray-600">Development</p>
+          </div>
+        </div>
+        <!-- Item 6 (Optionnel) -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img src="https://placehold.co/600x400/fdf4ff/db2777?text=Project+6"
+               alt="Projet 6"
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Mobile Fitness App</h3>
+            <p class="text-gray-600">App Design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section Contact (#contact) ===== -->
+  <section id="contact" class="bg-white py-24">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-lg text-custom-yellow font-semibold uppercase">Get In Touch</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">Contact Me</h2>
+      <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+        I'm available for freelance projects and collaborations. Feel free to send me a message.
+      </p>
+
+      <!-- Formulaire de contact -->
+      <form class="mt-16 max-w-2xl mx-auto text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-custom-yellow" placeholder="John Doe">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-custom-yellow" placeholder="john.doe@example.com">
+          </div>
+          <div class="md:col-span-2">
+            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-custom-yellow" placeholder="Project Inquiry">
+          </div>
+          <div class="md:col-span-2">
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+            <textarea id="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-custom-yellow" placeholder="Hello Ice, I'd like to talk about..."></textarea>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <button type="submit" class="bg-custom-yellow text-gray-900 font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-yellow-500 transition-all text-lg">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Pied de page (Footer) ===== -->
+<footer class="bg-gray-900 text-gray-400 py-16">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-8 md:space-y-0">
+      <!-- Logo -->
+      <a href="#home" class="text-4xl font-extrabold text-white">ice.</a>
+
+      <!-- Icônes Sociales -->
+      <div class="flex space-x-6">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.84c0-2.5 1.5-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7.02c4.78-.75 8.44-4.9 8.44-9.9C22 6.53 17.5 2.04 12 2.04z" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.04C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.58-.7-.02-1.36-.21-1.94-.53v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.7 2.13 2.94 4.02 2.97-1.47 1.15-3.32 1.83-5.33 1.83-.35 0-.69-.02-1.03-.06 1.9 1.22 4.16 1.93 6.56 1.93 7.88 0 12.2-6.54 12.2-12.2 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.22z" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.79.22-2.42.47-.65.25-1.13.59-1.62 1.08-.49.49-.83.97-1.08 1.62-.25.63-.42 1.36-.47 2.42-.05 1.06-.06 1.4-.06 4.12s.01 3.06.06 4.12c.05 1.06.22 1.79.47 2.42.25.65.59 1.13 1.08 1.62.49.49.97.83 1.62 1.08.63.25 1.36.42 2.42.47 1.06.05 1.4.06 4.12.06s3.06-.01 4.12-.06c1.06-.05 1.79-.22 2.42-.47.65-.25 1.13-.59 1.62-1.08.49-.49.83-.97 1.08-1.62.25-.63.42-1.36.47-2.42.05-1.06.06-1.4.06-4.12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.79-.47-2.42-.25-.65-.59-1.13-1.08-1.62-.49-.49-.97-.83-1.62-1.08-.63-.25-1.36-.42-2.42-.47C15.06 2.01 14.72 2 12 2zm0 1.8c2.67 0 2.99.01 4.04.06 1.02.05 1.58.21 1.9.35.4.15.7.34.99.63.29.29.48.59.63.99.14.32.3.88.35 1.9.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.05 1.02-.21 1.58-.35 1.9-.15.4-.34.7-.63.99-.29.29-.59.48-.99.63-.32.14-.88.3-1.9.35-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-1.02-.05-1.58-.21-1.9-.35-.4-.15-.7-.34-.99-.63-.29-.29-.48-.59-.63-.99-.14-.32-.3-.88-.35-1.9-.05-1.05-.06-1.37-.06-4.04s.01-2.99.06-4.04c.05-1.02.21-1.58.35-1.9.15-.4.34-.7.63-.99.29-.29.59-.48.99-.63.32-.14.88-.3 1.9-.35C9.01 3.81 9.33 3.8 12 3.8zm0 4.38c-2.31 0-4.18 1.87-4.18 4.18s1.87 4.18 4.18 4.18 4.18-1.87 4.18-4.18-1.87-4.18-4.18-4.18zm0 6.56c-1.31 0-2.38-1.07-2.38-2.38s1.07-2.38 2.38-2.38 2.38 1.07 2.38 2.38-1.07 2.38-2.38 2.38zm3.22-6.68c-.6 0-1.08.48-1.08 1.08s.48 1.08 1.08 1.08 1.08-.48 1.08-1.08-.48-1.08-1.08-1.08z" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2.5 0A2.5 2.5 0 000 2.5v19A2.5 2.5 0 002.5 24h19a2.5 2.5 0 002.5-2.5v-19A2.5 2.5 0 0021.5 0H2.5zM8.09 19H5.1v-9.5h2.99V19zM6.59 8.04c-.97 0-1.75-.78-1.75-1.74s.78-1.74 1.75-1.74 1.75.78 1.75 1.74-.78 1.74-1.75 1.74zM19 19h-2.91v-4.52c0-1.08-.02-2.46-1.5-2.46-1.5 0-1.73 1.17-1.73 2.38V19h-2.9V9.5h2.78v1.28h.04c.39-.74 1.34-1.51 2.74-1.51 2.94 0 3.48 1.93 3.48 4.45V19z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p>&copy; 2025 Ice Dude. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- JavaScript pour le menu mobile -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+    const body = document.body;
+
+    // Ouvre et ferme le menu
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+
+      // Change l'icône (Hamburger <-> Croix)
+      if (menu.classList.contains('hidden')) {
+        menuBtn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>`;
+        body.style.overflow = 'auto'; // Permet de défiler à nouveau
+      } else {
+        menuBtn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>`;
+        body.style.overflow = 'hidden'; // Bloque le défilement
+      }
+    });
+
+    // Ferme le menu en cliquant sur un lien
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        menuBtn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>`;
+        body.style.overflow = 'auto';
+      });
+    });
+  });
+</script>
+</body>
+</html>
